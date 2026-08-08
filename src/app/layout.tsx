@@ -3,6 +3,8 @@ import { Inter, Inter_Tight } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { PreviewNotice } from "@/components/preview/PreviewNotice";
+import { PreviewWatermark } from "@/components/preview/PreviewWatermark";
 import { company } from "@/content";
 import { site } from "@/lib/utils";
 import "./globals.css";
@@ -129,6 +131,11 @@ export default function RootLayout({
         <main id="main">{children}</main>
 
         <Footer />
+
+        {/* Client preview overlay. Presentation-only and fully isolated from
+            the site — delete these two lines to ship production. */}
+        <PreviewWatermark />
+        <PreviewNotice />
 
         <script
           type="application/ld+json"
