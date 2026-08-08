@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
+import { asset } from "@/lib/utils";
 
 /**
  * Gallery.
@@ -90,7 +91,7 @@ export function Gallery() {
                   className="absolute -inset-y-[12%] inset-x-0"
                 >
                   <Image
-                    src={tile.src}
+                    src={asset(tile.src)}
                     alt={tile.alt}
                     fill
                     sizes="(min-width:1024px) 40vw, (min-width:640px) 50vw, 90vw"

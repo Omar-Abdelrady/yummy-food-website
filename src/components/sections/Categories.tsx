@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { getCategoriesWithCounts } from "@/content";
+import { asset } from "@/lib/utils";
 
 /**
  * Product categories, organised by format.
@@ -41,7 +42,7 @@ export function Categories() {
                     className="absolute inset-0 bg-[radial-gradient(90%_70%_at_70%_18%,rgba(201,162,39,0.28),transparent_62%)]"
                   />
                   <Image
-                    src={category.image}
+                    src={asset(category.image)}
                     alt=""
                     fill
                     sizes="(min-width:768px) 33vw, 90vw"

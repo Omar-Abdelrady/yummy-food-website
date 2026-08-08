@@ -24,6 +24,7 @@ import {
   vision,
 } from "@/content";
 import { ServiceIcon } from "@/components/ui/ServiceIcon";
+import { asset } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -69,7 +70,7 @@ export default function AboutPage() {
                   />
                   <Parallax distance={30} className="absolute -inset-y-[10%] inset-x-0">
                     <Image
-                      src="/products/noodles-1kg.png"
+                      src={asset("/products/noodles-1kg.png")}
                       alt="Yummy Food bulk pack showing the printed nutrition and traceability panel"
                       fill
                       sizes="(min-width:1024px) 40vw, 90vw"

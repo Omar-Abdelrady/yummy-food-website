@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/SectionHeading";
 import { MouseGlow } from "@/components/motion/MouseGlow";
-import { EASE } from "@/lib/utils";
+import { asset, EASE } from "@/lib/utils";
 
 /**
  * Layered hero composition.
@@ -264,7 +264,7 @@ function HeroPack({
     >
       <div className={reduced ? "" : pack.float}>
         <Image
-          src={pack.src}
+          src={asset(pack.src)}
           alt={pack.alt}
           width={900}
           height={900}

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getCategoryTitle, type Product } from "@/content";
-import { cn } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
 import { Badge } from "./Badge";
 
 interface ProductCardProps {
@@ -49,7 +49,7 @@ export function ProductCard({
           className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_105%,rgba(201,162,39,0.16),transparent_62%)]"
         />
         <Image
-          src={product.image}
+          src={asset(product.image)}
           alt={`${product.name} packaging`}
           fill
           priority={priority}

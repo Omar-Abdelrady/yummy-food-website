@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { company } from "@/content";
-import { cn } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
 
 interface LogoProps {
   className?: string;
@@ -32,7 +32,7 @@ export function Logo({ className, tone = "light", compact = false }: LogoProps) 
         )}
       >
         <Image
-          src="/products/yummy-food-logo.png"
+          src={asset("/products/yummy-food-logo.png")}
           alt=""
           width={200}
           height={200}

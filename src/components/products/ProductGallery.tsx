@@ -4,7 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { Tilt } from "@/components/motion/Tilt";
-import { cn, EASE } from "@/lib/utils";
+import { asset, cn, EASE } from "@/lib/utils";
 
 interface ProductGalleryProps {
   images: string[];
@@ -43,7 +43,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
               className="absolute inset-0"
             >
               <Image
-                src={unique[index]}
+                src={asset(unique[index])}
                 alt={`${name} packaging`}
                 fill
                 priority
@@ -76,7 +76,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
               )}
             >
               <Image
-                src={src}
+                src={asset(src)}
                 alt=""
                 fill
                 sizes="96px"

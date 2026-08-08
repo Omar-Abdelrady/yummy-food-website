@@ -29,6 +29,20 @@ export function cn(...inputs: ClassValue[]) {
 /** Shared easing for the whole site. One curve keeps motion feeling authored. */
 export const EASE = [0.16, 1, 0.3, 1] as const;
 
+/**
+ * Prefixes a `/public` asset path with the deployment base path.
+ *
+ * `next/image` applies `basePath` to its own generated URLs, but with
+ * `images.unoptimized` it emits the raw `src` untouched — so on a sub-path
+ * deployment (GitHub Pages) every image 404s unless the prefix is added here.
+ * Returns the path unchanged when `NEXT_PUBLIC_BASE_PATH` is empty, so local
+ * dev and root-domain hosting are unaffected.
+ */
+export function asset(path: string) {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  return `${base}${path}`;
+}
+
 export const site = {
   name: "Yummy Food",
   /** Used for canonical URLs, sitemap and OG tags. */

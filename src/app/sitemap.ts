@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { getProductSlugs, getServiceSlugs } from "@/content";
 import { site } from "@/lib/utils";
 
+/** Required by `output: "export"` — route handlers must opt in to being static. */
+export const dynamic = "force-static";
+
 /**
  * Generated from the content layer rather than hand-maintained, so a new
  * product or service is indexed the moment it is added to the data files.

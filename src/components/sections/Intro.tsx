@@ -7,6 +7,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { TextReveal } from "@/components/motion/TextReveal";
 import { Parallax } from "@/components/motion/Parallax";
 import { company } from "@/content";
+import { asset } from "@/lib/utils";
 
 /**
  * Company introduction.
@@ -45,7 +46,7 @@ export function Intro() {
                 />
                 <Parallax distance={26} className="absolute inset-0">
                   <Image
-                    src="/products/noodles-1kg.png"
+                    src={asset("/products/noodles-1kg.png")}
                     alt="Yummy Food bulk noodle multi-pack, front and back panels"
                     fill
                     sizes="(min-width:1024px) 40vw, 90vw"
