@@ -20,7 +20,10 @@ const nextConfig: NextConfig = {
         // nothing needs changing to satisfy this.
         output: "export" as const,
         // No server to resize on request in a static bundle.
-        images: { unoptimized: true },
+        images: {
+          unoptimized: true,
+          remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
+        },
         // A static host resolves /about to /about/index.html; without this the
         // export emits /about.html and internal links 404.
         trailingSlash: true,
