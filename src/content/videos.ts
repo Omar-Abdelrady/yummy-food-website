@@ -5,17 +5,25 @@ export interface VideoItem {
   thumbnail: string;
 }
 
-export interface RecipeVideoCard extends VideoItem {
+export interface VideoCardItem extends VideoItem {
   label: string;
   number: string;
-  className: string;
+  className?: string;
 }
+
+export type RecipeVideoCard = VideoCardItem;
 
 export const recipeVideo: VideoItem = {
   id: "xlg-fWC3GzA",
   title: "Chinese Noodle Soup",
   source: "RecipeTin Eats",
   thumbnail: "https://i.ytimg.com/vi/xlg-fWC3GzA/hqdefault.jpg",
+};
+
+export const companyHistoryVideo: VideoCardItem = {
+  ...recipeVideo,
+  label: "Company history",
+  number: "01",
 };
 
 export const recipeVideoCards: RecipeVideoCard[] = [

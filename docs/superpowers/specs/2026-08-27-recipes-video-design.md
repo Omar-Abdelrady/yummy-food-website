@@ -2,7 +2,7 @@
 
 ## Goal
 
-Add a `/recipes` page that presents YouTube recipe-video cards in the existing Yummy Food visual language. Clicking a card opens a polished, accessible YouTube iframe lightbox. Reuse the same video-card/lightbox component as the future company-history section, but do not label the supplied recipe video as company history.
+Add a `/recipes` page that presents YouTube recipe-video cards in the existing Yummy Food visual language. Clicking a card opens a polished, accessible YouTube iframe lightbox. Reuse the same video-card/lightbox component for a company-history section on the homepage, using the supplied video at the user's direction while keeping the original creator attribution visible.
 
 ## Confirmed video
 
@@ -12,7 +12,7 @@ Add a `/recipes` page that presents YouTube recipe-video cards in the existing Y
 - Public creator: `RecipeTin Eats`
 - Thumbnail: `https://i.ytimg.com/vi/xlg-fWC3GzA/hqdefault.jpg`
 
-The supplied video is used for the recipes page now. A separate Yummy Food company-history URL is still required before the homepage history video can be embedded.
+The supplied video is used for the recipes page and the homepage company-history section at the user's direction. The card and lightbox continue to identify RecipeTin Eats as the source.
 
 ## Options considered
 
@@ -27,7 +27,7 @@ The supplied video is used for the recipes page now. A separate Yummy Food compa
 - `src/app/recipes/page.tsx` composes the shared `PageHeader`, a responsive editorial card grid, and a closing CTA using existing site components and tokens.
 - `src/lib/utils.ts` adds `/recipes` to the primary navigation.
 - `src/app/sitemap.ts` adds the `/recipes` route to generated metadata.
-- `src/components/sections/HistoryVideo.tsx` is not rendered with the recipe video. It can be added after the separate history video URL is provided, using the same card/lightbox component.
+- `src/components/sections/HistoryVideo.tsx` renders the supplied video on the homepage after the intro section, using the same card/lightbox component.
 
 ## Visual behavior
 
@@ -52,4 +52,4 @@ The supplied video is used for the recipes page now. A separate Yummy Food compa
 - The generated export contains `/recipes/index.html`.
 - The recipe link appears in desktop and mobile navigation and in the sitemap.
 - A card opens the YouTube iframe, Escape and the close button dismiss it, and the page remains usable on narrow screens.
-- The homepage does not claim that the RecipeTin Eats video is Yummy Food history.
+- The homepage history section uses the supplied video as requested and keeps the RecipeTin Eats source attribution visible in the card and lightbox.

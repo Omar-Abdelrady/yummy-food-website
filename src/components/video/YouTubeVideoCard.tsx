@@ -5,11 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, Play, X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import type { MouseEvent } from "react";
-import type { RecipeVideoCard } from "@/content";
+import type { VideoCardItem } from "@/content";
 import { cn, EASE } from "@/lib/utils";
 
 interface YouTubeVideoCardProps {
-  video: RecipeVideoCard;
+  video: VideoCardItem;
 }
 
 export function YouTubeVideoCard({ video }: YouTubeVideoCardProps) {

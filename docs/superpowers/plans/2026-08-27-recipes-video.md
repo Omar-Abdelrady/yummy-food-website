@@ -4,7 +4,7 @@
 
 **Goal:** Add a static-compatible `/recipes` page with reusable YouTube thumbnail cards that open an accessible iframe lightbox, using the supplied Chinese Noodle Soup video.
 
-**Architecture:** Keep video metadata in the content layer, render the recipes route as a server component, and isolate browser-only lightbox state in one client component. The same component will be available for a future homepage company-history video, but the supplied RecipeTin Eats video will not be used or labeled as company history.
+**Architecture:** Keep video metadata in the content layer, render the recipes route and homepage history section as server components, and isolate browser-only lightbox state in one client component. The supplied RecipeTin Eats video is reused in both places at the user's direction, with source attribution visible.
 
 **Tech Stack:** Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4, Framer Motion, lucide-react, static export for GitHub Pages.
 
@@ -16,6 +16,7 @@
 - The lightbox must support a visible close button, Escape, backdrop click, semantic dialog labeling, and strict iframe permissions/referrer policy.
 - No server actions, API routes, or runtime data are introduced; the result must work with the existing `output: "export"` build.
 - Do not modify or stage the existing unrelated `.vscode/settings.json`, `pnpm-lock.yaml`, or `pnpm-workspace.yaml` changes.
+- The homepage history section uses the supplied video ID `xlg-fWC3GzA` and labels the source as `RecipeTin Eats`.
 
 ---
 
@@ -168,13 +169,16 @@
   git commit -m "feat: add youtube video lightbox"
   ```
 
-### Task 3: Compose the `/recipes` page in the existing visual system
+### Task 3: Compose the `/recipes` page and homepage history section in the existing visual system
 
 **Files:**
 - Create: `src/app/recipes/page.tsx`
+- Create: `src/components/sections/HistoryVideo.tsx`
+- Modify: `src/app/page.tsx`
 
 **Interfaces:**
 - Consumes `recipeVideoCards` from `@/content` and `YouTubeVideoCard` from `@/components/video/YouTubeVideoCard`.
+- Consumes `companyHistoryVideo` from `@/content` and produces the homepage history section.
 - Produces the statically prerenderable `/recipes` route with page metadata and the video-card grid.
 
 - [ ] **Step 1: Add route metadata and shared page framing**
@@ -187,13 +191,14 @@
 
 - [ ] **Step 3: Add an on-brand closing CTA**
 
-  Render the existing `CTA` component with copy that directs wholesale/private-label visitors to contact Yummy Food after watching the recipe content. Do not add a company-history video or use the RecipeTin Eats video in homepage content.
+  Render the existing `CTA` component with copy that directs wholesale/private-label visitors to contact Yummy Food after watching the recipe content. In `src/components/sections/HistoryVideo.tsx`, render a dark two-column homepage section with `SectionHeading` eyebrow `Company history` and a `YouTubeVideoCard` using `companyHistoryVideo`; import and render `<HistoryVideo />` immediately after `<Intro />` in `src/app/page.tsx`.
 
 - [ ] **Step 4: Run lint and build the route**
 
   Run:
 
   ```bash
+  npm run test
   npm run lint
   npm run build
   test -f out/recipes/index.html
@@ -246,4 +251,4 @@
 
 - [ ] **Step 3: Report the pending history-video dependency**
 
-  The handoff must state that the recipes page is complete and that the homepage company-history embed still needs a separate Yummy Food YouTube URL. The RecipeTin Eats video must not be described as company history.
+  The handoff must state that the recipes page and homepage history section use the supplied video, with RecipeTin Eats attribution visible.

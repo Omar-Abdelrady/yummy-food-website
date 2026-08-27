@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { Intro } from "@/components/sections/Intro";
+import { HistoryVideo } from "@/components/sections/HistoryVideo";
 import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
 import { Categories } from "@/components/sections/Categories";
 import { WhyUs } from "@/components/sections/WhyUs";
@@ -21,11 +22,11 @@ export const metadata: Metadata = {
 /**
  * Homepage section order is an argument, not a list.
  *
- * Hero (promise) → Intro (who) → Products (proof by artefact) → Categories
- * (scale of range) → Why us (differentiation) → Process (how, builds trust) →
- * Stats (consequence of that capability) → Certifications (the gate) →
- * Services (the higher-margin question) → Gallery (emotional close) → CTA
- * (decision).
+ * Hero (promise) → Intro (who) → History (story) → Products (proof by
+ * artefact) → Categories (scale of range) → Why us (differentiation) →
+ * Process (how, builds trust) → Stats (consequence of that capability) →
+ * Certifications (the gate) → Services (the higher-margin question) →
+ * Gallery (emotional close) → CTA (decision).
  *
  * Each section is a doorway with one job; none tries to be complete, because
  * depth is always one click away.
@@ -35,6 +36,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Intro />
+      <HistoryVideo />
       <FeaturedProducts />
       <Categories />
       <WhyUs />
