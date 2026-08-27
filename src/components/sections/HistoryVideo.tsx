@@ -13,7 +13,7 @@ export function HistoryVideo() {
       />
 
       <Container className="relative">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-16">
           <SectionHeading
             tone="dark"
             eyebrow="Company history"
@@ -23,7 +23,10 @@ export function HistoryVideo() {
           />
 
           <Reveal delay={0.12} className="min-w-0">
-            <YouTubeVideoCard video={companyHistoryVideo} />
+            <YouTubeVideoCard
+              video={companyHistoryVideo}
+              className="min-h-[28rem] lg:min-h-[34rem]"
+            />
           </Reveal>
         </div>
       </Container>

@@ -10,9 +10,10 @@ import { cn, EASE } from "@/lib/utils";
 
 interface YouTubeVideoCardProps {
   video: VideoCardItem;
+  className?: string;
 }
 
-export function YouTubeVideoCard({ video }: YouTubeVideoCardProps) {
+export function YouTubeVideoCard({ video, className }: YouTubeVideoCardProps) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -64,6 +65,7 @@ export function YouTubeVideoCard({ video }: YouTubeVideoCardProps) {
         className={cn(
           "group relative flex h-full w-full min-h-[19rem] overflow-hidden rounded-xl3 text-left transition-all duration-700 ease-brand hover:-translate-y-1.5 hover:shadow-[0_32px_70px_-35px_rgba(11,11,12,0.6)] focus-visible:outline-offset-4 lg:min-h-0",
           video.className,
+          className,
         )}
       >
         <Image

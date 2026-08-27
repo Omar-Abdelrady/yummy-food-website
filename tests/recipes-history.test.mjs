@@ -26,3 +26,9 @@ test("company history video keeps the supplied YouTube source", () => {
   assert.match(videos, /companyHistoryVideo/);
   assert.match(videos, /xlg-fWC3GzA/);
 });
+
+test("homepage history video uses the larger presentation frame", () => {
+  const section = read("src/components/sections/HistoryVideo.tsx");
+
+  assert.match(section, /min-h-\[28rem\]/);
+});
