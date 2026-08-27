@@ -62,7 +62,7 @@ export function YouTubeVideoCard({ video }: YouTubeVideoCardProps) {
         aria-label={`Watch ${video.title} by ${video.source}`}
         onClick={() => setOpen(true)}
         className={cn(
-          "group relative flex min-h-[19rem] overflow-hidden rounded-xl3 text-left transition-all duration-700 ease-brand hover:-translate-y-1.5 hover:shadow-[0_32px_70px_-35px_rgba(11,11,12,0.6)] focus-visible:outline-offset-4 lg:min-h-0",
+          "group relative flex h-full w-full min-h-[19rem] overflow-hidden rounded-xl3 text-left transition-all duration-700 ease-brand hover:-translate-y-1.5 hover:shadow-[0_32px_70px_-35px_rgba(11,11,12,0.6)] focus-visible:outline-offset-4 lg:min-h-0",
           video.className,
         )}
       >
