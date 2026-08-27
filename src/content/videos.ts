@@ -63,4 +63,40 @@ export const recipeVideoCards: RecipeVideoCard[] = [
     number: "06",
     className: "lg:col-span-4",
   },
+  {
+    ...recipeVideo,
+    label: "Weeknight bowl",
+    number: "07",
+    className: "lg:col-span-7 lg:row-span-2",
+  },
+  {
+    ...recipeVideo,
+    label: "A simple broth",
+    number: "08",
+    className: "lg:col-span-5",
+  },
+  {
+    ...recipeVideo,
+    label: "Noodle comfort",
+    number: "09",
+    className: "lg:col-span-5",
+  },
+  {
+    ...recipeVideo,
+    label: "Fresh toppings",
+    number: "10",
+    className: "lg:col-span-4",
+  },
+  {
+    ...recipeVideo,
+    label: "The shared table",
+    number: "11",
+    className: "lg:col-span-4",
+  },
+  {
+    ...recipeVideo,
+    label: "One more bowl",
+    number: "12",
+    className: "lg:col-span-4",
+  },
 ];

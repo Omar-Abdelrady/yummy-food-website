@@ -32,3 +32,15 @@ test("homepage history video uses the larger presentation frame", () => {
 
   assert.match(section, /min-h-\[28rem\]/);
 });
+
+test("recipes content provides more than one page of video cards", () => {
+  const videos = read("src/content/videos.ts");
+
+  assert.ok((videos.match(/number: "/g) ?? []).length >= 12);
+});
+
+test("recipes route delegates the grid to the paginated gallery", () => {
+  const page = read("src/app/recipes/page.tsx");
+
+  assert.match(page, /RecipeVideoGallery/);
+});
