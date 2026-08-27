@@ -12,6 +12,13 @@ import { products } from "./products";
 import { services } from "./services";
 import type { Category, CategorySlug, Product, Service } from "./types";
 
+export {
+  recipeVideo,
+  recipeVideoCards,
+  type RecipeVideoCard,
+  type VideoItem,
+} from "./videos";
+
 export * from "./types";
 export {
   capacityFacts,
